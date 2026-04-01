@@ -62,7 +62,6 @@ function addToBasket(index) {
     let dishName = myDishes[index].name;
     let dishPrice = myDishes[index].price;
     let basketIndex = findInBasket(dishName);
-
     if (basketIndex === -1) {
         basket[basket.length] = {
             "name": dishName,
@@ -132,7 +131,7 @@ function changeQuantity(index, change) {
     renderBasket();
 }
 
-function removeFromBasket(index) {
+function removeFromBasket(index){
     let newBasket = [];
 
     for (let i = 0; i < basket.length; i++) {
@@ -140,7 +139,6 @@ function removeFromBasket(index) {
             newBasket[newBasket.length] = basket[i];
         }
     }
-
     basket = newBasket;
     renderBasket();
 
