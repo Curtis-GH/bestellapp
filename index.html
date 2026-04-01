@@ -5,92 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BurgerHouse</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./img/favicon.jpg" type="image/png">
-    
+    <link rel="icon" href="./img/favicon.jpg" type="image/png" />
   </head>
 
   <body onload="init()">
-    
+    <header class="hero-section">
+      <img class="logo" src="./img/logo.png" alt="logo" />
+      <button class="hamburger-btn">☰</button>
+    </header>
 
-      
-      <header class="hero-section">
-    <img class="logo" src="./img/logo.png" alt="logo" />
-    <button class="hamburger-btn">☰</button>
-</header>
+    <div class="hero-container">
+      <img
+        class="hero-picture"
+        src="./img/hero_picture.jpg"
+        alt="Burger Hero"
+      />
+      <img class="logo-overlay" src="./img/pizza.jpg" alt="logo" />
+    </div>
 
-      
-      
-<div class="hero-container">
-    <img class="hero-picture" src="./img/hero_picture.jpg" alt="Burger Hero" />
-    <img class="logo-overlay" src="./img/pizza.jpg" alt="logo" />
-</div>
-
-<div class="wrapper">
-      
+    <div class="wrapper">
       <h1>Friends&Burgers</h1>
-<h2>dein Partner in sachen Freunde und Burger</h2>
-<div class="restaurant-info">
-    <div class="rating">
-        <span class="stars">⭐⭐⭐⭐</span>
-        <span class="rating-text">4,1 (317)</span>
-    </div>
-    <div class="delivery-info">
-        <span>🚚 Lieferung: 4,99€</span>
-        <span>⏱ ca. 30-45 Min.</span>
-    </div>
-</div>
-      
-<div class="sticky_basket">
-    
-    <section class="content">
-      <div id="myDishes">
+      <h2>dein Partner in sachen Freunde und Burger</h2>
+      <div class="restaurant-info">
+        <div class="rating">
+          <span class="stars">⭐⭐⭐⭐</span>
+          <span class="rating-text">4,1 (317)</span>
+        </div>
+        <div class="delivery-info">
+          <span>🚚 Lieferung: 4,99€</span>
+          <span>⏱ ca. 30-45 Min.</span>
+        </div>
+      </div>
 
-      </div>    
-    </section>
-    <section class="basket_wrapper">
-      <div class="basket">
-    <button class="basket-close" onclick="closeMobileBasket()">X</button>
-    <h3 class="basket-title">Warenkorb</h3>
-    <div id="basketItems">
-        <p class="basket-empty">🛒<br>Warenkorb leer!<br>lust auf was leckeres?</p>
-    </div>
-    <div id="basketSummary" class="hidden">
-        <div class="summary-row">
-            <span>Subtotal</span>
-            <span id="subtotal">0,00€</span>
-        </div>
-        <div class="summary-row">
-            <span>Delivery fee</span>
-            <span>4,99€</span>
-        </div>
-        <div class="summary-row total-row">
-            <span>Total</span>
-            <span id="total">0,00€</span>
-        </div>
-        <button class="buy-btn" id="buyBtn">jetzt bestellen (0,00€)</button>
-    </div>
-</div>
-    </section>
-</div>
+      <div class="sticky_basket">
+        <section class="content">
+          <div id="myDishes"></div>
+        </section>
+        <section class="basket_wrapper">
+          <div class="basket">
+            <button class="basket-close" onclick="closeMobileBasket()">
+              X
+            </button>
+            <h3 class="basket-title">Warenkorb</h3>
+            <div id="basketItems">
+              <p class="basket-empty">
+                🛒<br />Warenkorb leer!<br />lust auf was leckeres?
+              </p>
+            </div>
+            <div id="basketSummary" class="hidden">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="subtotal">0,00€</span>
+              </div>
+              <div class="summary-row">
+                <span>Delivery fee</span>
+                <span>4,99€</span>
+              </div>
+              <div class="summary-row total-row">
+                <span>Total</span>
+                <span id="total">0,00€</span>
+              </div>
+              <button class="buy-btn" id="buyBtn">
+                jetzt bestellen (0,00€)
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
 
-      
       <footer class="footer">
-        <p class="footer-text">© 2026 Friends&Burgers – Alle Rechte vorbehalten</p>
+        <p class="footer-text">
+          © 2026 Friends&Burgers – Alle Rechte vorbehalten
+        </p>
       </footer>
-
     </div>
     <dialog id="confirmDialog" class="confirm-dialog">
-    <button class="dialog-close" onclick="closeDialog()">X</button>
-    <p class="dialog-icon">🚚</p>
-    <h3 class="dialog-title">Order confirmed!</h3>
-    <p class="dialog-text">Your food is on its way!</p>
-</dialog>
-<nav class="mobile-nav">
-    <button class="mobile-nav-btn">🏠<span>Home</span></button>
-    <button class="mobile-nav-btn">👤<span>Account</span></button>
-    <button class="mobile-nav-btn">📋<span>Menu</span></button>
-    <button class="mobile-nav-btn" onclick="toggleMobileBasket()">🛒<span>Cart</span></button>
-</nav>
+      <button class="dialog-close" onclick="closeDialog()">X</button>
+      <p class="dialog-icon">🚚</p>
+      <h3 class="dialog-title">Order confirmed!</h3>
+      <p class="dialog-text">Your food is on its way!</p>
+    </dialog>
+    <nav class="mobile-nav">
+      <button class="mobile-nav-btn">🏠<span>Home</span></button>
+      <button class="mobile-nav-btn">👤<span>Account</span></button>
+      <button class="mobile-nav-btn">📋<span>Menu</span></button>
+      <button class="mobile-nav-btn" onclick="toggleMobileBasket()">
+        🛒<span>Cart</span>
+      </button>
+    </nav>
     <script src="script.js"></script>
   </body>
 </html>
