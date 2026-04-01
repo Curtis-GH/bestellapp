@@ -1,11 +1,6 @@
-
-
-html, body {
-  overflow-x: hidden;
-}
 body {
   margin: 0;
-  font-family: Georgia, serif;
+  font-family: Arial, sans-serif;
   color: #2b2b2b;
   background-color: #faf6f1;
 }
@@ -33,6 +28,7 @@ body {
   padding-top: 15px;
   padding-left: 60px;
 }
+
 .hero-container {
   position: relative;
 }
@@ -90,18 +86,17 @@ h2 {
 
 
 .sticky_basket {
-  gap: 2px;
-  padding: 2px;
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
+  gap: 20px;
+  padding: 20px;
   background-color: #faf6f1;
 }
 
 .content {
   width: calc(100% - 308px);
   padding: 16px;
-  
+
 }
 
 .basket_wrapper {
@@ -109,6 +104,7 @@ h2 {
   flex-grow: 1;
   padding: 16px;
 }
+
 .basket-close {
   display: none;
 }
@@ -145,12 +141,13 @@ h2 {
 }
 
 .delivery-info {
-  font-size: 14px;
+  font-size: 16px;
   color: #555;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
+
 .card {
   display: flex;
   flex-direction: row;
@@ -174,7 +171,7 @@ h2 {
 }
 
 .card-info p {
-  font-size: 14px;
+  font-size: 20px;
   color: #777;
   margin: 0;
 }
@@ -190,9 +187,8 @@ h2 {
   background: none;
   border: none;
   color: #e76c1f;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
-  font-family: Georgia, serif;
 }
 
 .add-btn:hover {
@@ -244,12 +240,12 @@ h2 {
 }
 
 .basket-item-name {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .basket-item-price {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -265,7 +261,7 @@ h2 {
   color: #fff;
   width: 26px;
   height: 26px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   border-radius: 4px;
 }
@@ -276,7 +272,7 @@ h2 {
 }
 
 .quantity-display {
-  font-size: 14px;
+  font-size: 16px;
   color: #fff;
 }
 
@@ -284,7 +280,7 @@ h2 {
   background: none;
   border: none;
   color: #999;
-  font-size: 16px;
+  font-size: 30px;
   cursor: pointer;
   margin-left: auto;
 }
@@ -300,7 +296,7 @@ h2 {
 .summary-row {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
+  font-size: 17px;
   color: #ccc;
   margin-bottom: 6px;
 }
@@ -324,7 +320,6 @@ h2 {
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
-  font-family: Georgia, serif;
 }
 
 .buy-btn:hover {
@@ -428,8 +423,11 @@ h2 {
     position: relative;
     top: 0;
   }
-  .content{display: flex;
-  justify-content: center;}
+
+  .content {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 
@@ -463,11 +461,11 @@ h2 {
   }
 
   .card-info h4 {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .card-price {
-    font-size: 15px;
+    font-size: 16px;
     margin-right: 10px;
   }
 
@@ -476,7 +474,7 @@ h2 {
     padding: 8px 15px;
   }
 
-  
+
   .basket_wrapper {
     display: none;
     position: fixed;
@@ -501,22 +499,19 @@ h2 {
     overflow-y: auto;
     position: relative;
   }
+
   .basket-close {
-  display: block;
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  cursor: pointer;
-}
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+  }
 
-
-
-
- 
   .mobile-nav {
     display: flex;
     justify-content: space-around;
@@ -534,7 +529,7 @@ h2 {
   .mobile-nav-btn {
     background: none;
     border: none;
-    font-size: 22px;
+    font-size: 20px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -556,7 +551,10 @@ h2 {
   .wrapper {
     padding-bottom: 70px;
   }
-  .content{padding: 0;}
+
+  .content {
+    padding: 0;
+  }
 }
 
 @media (max-width: 320px) {
@@ -589,20 +587,20 @@ h2 {
   }
 
   .card-info h4 {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .card-info p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .card-price {
-    font-size: 13px;
+    font-size: 16px;
     margin-right: 5px;
   }
 
   .add-btn {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .category-title {
@@ -626,6 +624,9 @@ h2 {
   .mobile-nav-btn span {
     font-size: 8px;
   }
-  .content{display: flex;
-  justify-content: center;}
+
+  .content {
+    display: flex;
+    justify-content: center;
+  }
 }

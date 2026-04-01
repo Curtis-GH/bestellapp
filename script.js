@@ -3,19 +3,39 @@ const myDishes = [
     { "name": "Cheeseburger", "price": 12.99, "description": "Käseburger", "category": "Burger & Sandwiches" },
     { "name": "BBQ Bacon Burger", "price": 15.99, "description": "Burger mit BBQ", "category": "Burger & Sandwiches" },
     { "name": "V-Burger", "price": 9.99, "description": "Veganer gehts nicht", "category": "Burger & Sandwiches" },
+    { "name": "Beef Burger", "price": 14.99, "description": "Rindfleisch, Cheddar, Zwiebeln", "category": "Burger & Sandwiches" },
+    { "name": "Chicken Burger", "price": 13.50, "description": "Hähnchen, Mayo, Salat", "category": "Burger & Sandwiches" },
     { "name": "Pizza Margherita", "price": 11.90, "description": "Tomaten, Mozzarella, Basilikum", "category": "Pizza" },
     { "name": "Pizza Chorizo", "price": 13.90, "description": "Chorizo, Mozzarella, Tomaten", "category": "Pizza" },
+    { "name": "Funghi", "price": 12.90, "description": "Pilze, Mozzarella", "category": "Pizza" },
+    { "name": "Quattro Formaggi", "price": 14.90, "description": "Vier Käsesorten", "category": "Pizza" },
+    { "name": "Hawaii", "price": 13.50, "description": "Schinken, Ananas", "category": "Pizza" },
     { "name": "Mini green Salad", "price": 7.90, "description": "Frischer grüner Salat", "category": "Salad" },
-    { "name": "Warm beef arugula salad", "price": 13.90, "description": "Warmer Rindfleisch-Rucola Salat", "category": "Salad" }
+    { "name": "Warm beef arugula salad", "price": 13.90, "description": "Warmer Rindfleisch-Rucola Salat", "category": "Salad" },
+    { "name": "Caesar Salad", "price": 11.90, "description": "Hähnchen, Parmesan, Croutons", "category": "Salad" },
+    { "name": "Greek Salad", "price": 10.90, "description": "Feta, Oliven, Gurke", "category": "Salad" }
 ];
 
-let basket = []
+let basket = [];
 let deliveryFee = 4.99;
-
 const container = document.getElementById("myDishes");
 
-let html = "";
-let lastCategory = "";
+
+function init() {
+    let html = "";
+    let lastCategory = "";
+
+    for (let i = 0; i < myDishes.length; i++) {
+        if (myDishes[i].category !== lastCategory) {
+            html = html + '<h3 class="category-title">' + myDishes[i].category + '</h3>';
+            lastCategory = myDishes[i].category;
+        }
+
+        html = html + getDishCardHTML(i);
+    }
+
+    container.innerHTML = html;
+}
 
 function getDishCardHTML(i) {
     return '<div class="card">' +
@@ -28,36 +48,29 @@ function getDishCardHTML(i) {
         '</div>';
 }
 
-for (let i = 0; i < myDishes.length; i++) {
-    if (myDishes[i].category !== lastCategory) {
-        html = html + '<h3 class="category-title">' + myDishes[i].category + '</h3>';
-        lastCategory = myDishes[i].category;
+
+function findInBasket(dishName) {
+    for (let i = 0; i < basket.length; i++) {
+        if (basket[i].name === dishName) {
+            return i;
+        }
     }
-
-    html = html + getDishCardHTML(i);
+    return -1;
 }
-
-container.innerHTML = html;
 
 function addToBasket(index) {
     let dishName = myDishes[index].name;
     let dishPrice = myDishes[index].price;
+    let basketIndex = findInBasket(dishName);
 
-    let found = false;
-
-    for (let i = 0; i < basket.length; i++) {
-        if (basket[i].name === dishName) {
-            basket[i].quantity = basket[i].quantity + 1;
-            found = true;
-        }
-    }
-
-    if (found === false) {
+    if (basketIndex === -1) {
         basket[basket.length] = {
             "name": dishName,
             "price": dishPrice,
             "quantity": 1
-        }
+        };
+    } else {
+        basket[basketIndex].quantity = basket[basketIndex].quantity + 1;
     }
     renderBasket();
 }
