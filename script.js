@@ -43,7 +43,7 @@ function getDishCardHTML(i) {
         '<h4>' + myDishes[i].name + '</h4>' +
         '<p>' + myDishes[i].description + '</p>' +
         '</div>' +
-        '<span class="card-price">' + myDishes[i].price.toFixed(2) + '€</span>' +
+        '<span class="card-price">' + myDishes[i].price.toFixed(2).replace(".", ",") + '€</span>'+
         '<button class="add-btn" onclick="addToBasket(' + i + ')">hinzufügen</button>' +
         '</div>';
 }
@@ -80,7 +80,7 @@ function getBasketItemHTML(i) {
     return '<div class="basket-item">' +
         '<div class="basket-item-top">' +
         '<span class="basket-item-name">' + basket[i].quantity + ' x ' + basket[i].name + '</span>' +
-        '<span class="basket-item-price">' + itemTotal.toFixed(2) + '€</span>' +
+        '<span class="basket-item-price">' + itemTotal.toFixed(2).replace(".", ",") + '€</span>' +
         '</div>' +
         '<div class="basket-item-bottom">' +
         '<button class="quantity-btn" onclick="changeQuantity(' + i + ', -1)">-</button>' +
@@ -93,9 +93,9 @@ function getBasketItemHTML(i) {
 
 function updateBasketSummary(subtotal) {
     let total = subtotal + deliveryFee;
-    document.getElementById("subtotal").innerHTML = subtotal.toFixed(2) + '€';
-    document.getElementById("total").innerHTML = total.toFixed(2) + '€';
-    document.getElementById("buyBtn").innerHTML = 'jetzt bestellen (' + total.toFixed(2) + '€)';
+    document.getElementById("subtotal").innerHTML = subtotal.toFixed(2) .replace(".", ",") + '€';
+    document.getElementById("total").innerHTML = total.toFixed(2) .replace(".", ",") + '€';
+    document.getElementById("buyBtn").innerHTML = 'jetzt bestellen (' + total.toFixed(2).replace(".", ",") + '€)';
     document.getElementById("buyBtn").onclick = buyNow;
     document.getElementById("basketSummary").className = "";
 }
@@ -141,7 +141,6 @@ function removeFromBasket(index){
     }
     basket = newBasket;
     renderBasket();
-
 }
 
 function buyNow() {

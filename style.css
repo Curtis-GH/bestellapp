@@ -1,3 +1,8 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -203,6 +208,8 @@ h2 {
   position: sticky;
   top: 20px;
   color: #fff;
+  max-height: calc(100vh - 400px);
+  overflow-y: auto;
 }
 
 .basket-title {
@@ -383,6 +390,7 @@ h2 {
   left: 0;
   bottom: 0;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-text {
