@@ -208,8 +208,16 @@ h2 {
   position: sticky;
   top: 20px;
   color: #fff;
-  max-height: calc(100vh - 400px);
+  display: flex;
+  flex-direction: column;
+  max-height: 80vh;
+}
+#basketItems {
+  flex-grow: 1;
   overflow-y: auto;
+  margin-bottom: 15px;
+  padding-right: 5px;
+  height: 270px;
 }
 
 .basket-title {
